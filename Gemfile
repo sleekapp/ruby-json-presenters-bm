@@ -1,5 +1,7 @@
 source "https://rubygems.org/"
 
+gem "pry"
+
 gem "multi_json"
 gem "yajl-ruby"
 gem "oj"
