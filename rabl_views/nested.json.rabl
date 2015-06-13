@@ -1,5 +1,6 @@
-attributes :id, :author, :body, :created_at
-collection :comments
-child :comments do
-  extends "comment"
-end
+attribute :id
+attribute :body
+attribute :created_at
+
+child(:author) { extends "author" }
+child(:comments) { extends "comment" }

@@ -1,1 +1,5 @@
-attributes :id, :author, :body, :created_at
+attribute :id
+attribute :body
+attribute :created_at
+
+child(:author) { extends "author" }
