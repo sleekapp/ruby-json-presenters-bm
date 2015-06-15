@@ -1,4 +1,4 @@
-require "jbuilder"
+require "./jbuilder/jbuilder_ext"
 
 module JbuilderRepresenter
 
@@ -37,7 +37,7 @@ module JbuilderRepresenter
     end
 
     def to_builder
-      ::Jbuilder.new do |json|
+      ::JbuilderExt.new do |json|
         instance_exec json, @options, &representation
       end
     end
