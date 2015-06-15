@@ -9,18 +9,18 @@ NestedRepresenter = JbuilderRepresenter.new do
     json.created_at created_at
     json.author author_builder
     json.comments comments do |c|
-      comment_builder(c)
+      json.merge! comment_builder(c)
     end
   end
 
   private
 
   def author_builder
-    AuthorRepresenter.new(author).to_builder
+    AuthorRepresenter.new(author).to_hash
   end
 
   def comment_builder(comment)
-    CommentRepresenter.new(comment).to_builder
+    CommentRepresenter.new(comment).to_hash
   end
 
 end

@@ -19,7 +19,7 @@ Benchmark.bmbm(7) do |bm|
 
   bm.report("nested") do
     1_000.times do
-      SimpleRepresenter.new(POSTS.first).to_json
+      NestedRepresenter.new(POSTS.first).to_json
     end
   end
 
